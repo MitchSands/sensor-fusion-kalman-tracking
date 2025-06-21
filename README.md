@@ -60,9 +60,7 @@ In a funny effort (now in hindsight) I spent some time trying to find where I wa
 
 In this project, we simulate measurements from a radar (range `r`) and a camera (bearing `θ`), both of which include Gaussian noise. These are then converted to Cartesian coordinates `(x, y)` using:
 
-$
-x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)
-$
+x = r · cos(θ),  y = r · sin(θ)
 
 Although the noise added to `r` and `θ` is stationary (same standard deviation at each timestep), the **Cartesian error grows with target distance** due to the angle component. 
 
@@ -75,8 +73,7 @@ At **long range**, the same angular error causes a much larger offset:
 
 - A target 100 meters away with a 2° error causes a large lateral shift.
 - The projection of the angle error grows with range:  
-  $
-  \Delta x \approx r \cdot \Delta\theta
-  $
+  Δx ≈ r · Δθ
+
 
 So even though our `θ` noise is fixed (e.g. 1°), its effect **scales with distance**. 
